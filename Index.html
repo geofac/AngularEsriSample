@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+<!--- This code / project was inspired by and based off of http://justinchmura.com/2014/06/16/using-angularjs-esri-javascript-api/ --->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css" />
+    <script src="http://js.arcgis.com/3.9/"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.10/angular.min.js"></script>
+
+    <script src="js/local.js" ></script>
+
+    <script>
+        var mapTest = angular.module('mapTest',['map']);
+
+        mapTest.controller('mapTestController',['$scope', function($scope){
+            $scope.title = "Hello Map";
+
+        }]);
+
+    </script>
+
+    <title></title>
+</head>
+<body ng-app="mapTest" >
+
+    <div ng-controller="mapTestController">
+        <h1>{{title}}</h1>
+
+        <esri-map zoom="4" basemap="streets" id="mapID">
+        </esri-map>
+
+    </div> -
+
+
+</body>
+</html>
